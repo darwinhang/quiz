@@ -60,7 +60,9 @@ function createRadio(){
         f_in.value = allQuestions[counter].choices[i];
         f.appendChild(f_in);
         var lab = document.createTextNode(allQuestions[counter].choices[i]);
+        var br2 = document.createElement('br');
         f.appendChild(lab);
+        f.appendChild(br2);
     }
     document.getElementById("action").appendChild(f);
     counter++;
@@ -72,7 +74,7 @@ function createButton(){
     var t=document.createTextNode("Next");
     btn.appendChild(t);
     btn.onclick = replaceRadio;
-    document.getElementById("demo").appendChild(btn);
+    document.getElementById("action").appendChild(btn);
 }
 
 // This function is used in place of createRadio after the first iteration.
