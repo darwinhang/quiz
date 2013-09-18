@@ -9,7 +9,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5 col-md-offset-4">
+			<div class="col-md-5 col-md-offset2">
 				<h1>Destroy this Quiz!</h1>
     		<div id="action"></div>
     	</div>
