@@ -4,7 +4,7 @@
 This is a quiz based on the javascriptissexy.com learn js in 6 weeks blog post.
 
 ## Todo ##
-* ~Add Twitter Bootstrap~
+* ~~Add Twitter Bootstrap~~
 * Make sure that all questions are answered before proceeding to next question
 * Turn the buttons into classes so that creation is more straightforward
 * Have quiz answers placed into an object or array so that I can sort through them

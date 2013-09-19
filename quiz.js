@@ -69,10 +69,11 @@ function createRadio(){
     createButton();
 }
 
+// create both next and back buttons
 function createButton(){
-    var btn=document.createElement("button");
+	var btn=document.createElement("button");
     var t=document.createTextNode("Next");
-    btn.appendChild(t);
+	btn.appendChild(t);
     btn.onclick = replaceRadio;
     document.getElementById("action").appendChild(btn);
 }
