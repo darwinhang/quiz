@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	<!-- This is what the new version should look like with back and next buttons -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		form { border: 3px solid gray; border-radius: 0px 0px 15px 15px; padding: 15px; background-color:white;}
+		h1 { text-align:center; border: 2px solid black; border-radius: 15px 15px 0px 0px; background-color:white;}
+		button {margin-top:10px;}
+		body {background-color:#E8E8E8;}
+	</style>
+	<script src="quiz2.js"></script><script src="quiz2.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 col-md-offset-3">
+				<h1>Quiz</h1>
+					<form>
+						<input type="radio" name="option" value=0>question1<br>
+						<input type="radio" name="option" value=1>question1<br>
+						<input type="radio" name="option" value=2>question1<br>
+						<input type="radio" name="option" value=3>question1<br>
+						<div class="row">
+							<div class="col-xs-5 col-md-1">
+								<button type="button" class="btn btn-default" id="back" value="back">Back</button>
+							</div>
+							<div class="col-xs-5 col-xs-offset-15 col-md-1 col-md-offset-7">
+								<button type="button" class="btn btn-default" id="next" value="next" onclick="validate()">Next</button>
+							</div>
+						<div>
+					</form>
+					<div id="quiz">
+						<!-- quiz will be loaded here -->
+					</div>
+			</div>
+		</div>
+	</div>
+	<script src="lib/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
