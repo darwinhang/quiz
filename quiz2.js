@@ -40,8 +40,8 @@
 /**
  * Created with JetBrains WebStorm.
  * User: winious
- * Date: 8/19/13
- * Time: 10:26 AM
+ * Date: 11/4/2013
+ * Time: 9:00 PM
  * To change this template use File | Settings | File Templates.
  */
 var allQuestions = [
@@ -94,25 +94,31 @@ function createRadio(increment){
 	console.log("counter " + counter);
 	console.log("answered in createRadio " + answered);
     var f = document.createElement("form");
+	f.setAttribute("id", "form1");
     var text = document.createTextNode(allQuestions[counter].question);
     var br = document.createElement('br');
     f.appendChild(text);
     f.appendChild(br);
-    f.name ='quiz';
+    	f.name ='quiz';
 	console.log(f);
     for (var i=0; i< allQuestions[counter].choices.length; i++) {
         var f_in = document.createElement('input');
         f_in.type = 'radio';
         f_in.name = 'option';
+		f_in.id = allQuestions[counter].choices[i];
         f_in.value = allQuestions[counter].choices[i];
 		if (i == answered[counter]) {
 			console.log("f_in: " + answered[counter]);
 			f_in.checked = true;
 		}
         f.appendChild(f_in);
-        var lab = document.createTextNode(allQuestions[counter].choices[i]);
+		var newlabel = document.createElement('label');
+		newlabel.setAttribute("for", allQuestions[counter].choices[i]);
+		newlabel.innerHTML = allQuestions[counter].choices[i];
+        //var lab = document.createTextNode(allQuestions[counter].choices[i]);
         var br2 = document.createElement('br');
-        f.appendChild(lab);
+        //f.appendChild(lab);
+		f.appendChild(newlabel);
         f.appendChild(br2);
     }
 	var action = document.getElementById("quiz");
@@ -123,16 +129,30 @@ function createRadio(increment){
 
 // create both next and back buttons
 function createButton(){
-	var btn=document.createElement("button");
-    var t=document.createTextNode("Next");
-	btn.appendChild(t);
-    btn.onclick = replaceRadio;
-    document.getElementById("quiz").appendChild(btn);
+	var btnholder = document.createElement('div');
+	btnholder.setAttribute("id", "btnholder");
+	btnholder.setAttribute("class", "row");
+	document.getElementById("form1").appendChild(btnholder);
+	var backstyle = document.createElement('div');
+	backstyle.setAttribute("id", "backstyle");
+	backstyle.setAttribute("class", "col-xs-5 col-xs-offset-15 col-md-1 col-md-offset-7");
+	document.getElementById("btnholder").appendChild(backstyle);
 	var back=document.createElement("button");
 	var backText=document.createTextNode("Back");
 	back.appendChild(backText);
 	back.onclick = replaceRadioBack;
-	document.getElementById("quiz").appendChild(back);
+	//document.getElementById("quiz").appendChild(back);
+	document.getElementById("backstyle").appendChild(back);
+	var nextstyle = document.createElement('div');
+	nextstyle.setAttribute("id", "nextstyle");
+	nextstyle.setAttribute("class", "col-xs-5 col-md-1");
+	document.getElementById("btnholder").appendChild(nextstyle);
+	var btn=document.createElement("button");
+    var t=document.createTextNode("Next");
+	btn.appendChild(t);
+    btn.onclick = replaceRadio;
+    //document.getElementById("quiz").appendChild(btn);
+	document.getElementById("nextstyle").appendChild(btn);
 }
 
 // This function is used in place of createRadio after the first iteration.
@@ -185,8 +205,12 @@ function check()
 // Function to check score and then clear page.
 var clearPage = function() {
     //check();
+	var buttons = document.getElementById("btnholder");
+	while (buttons.childNodes[0]){
+		buttons.removeChild(buttons.childNodes[0]);
+	}
     var rem=document.getElementById("quiz");
-	// remove all the child nodes
+	// remove all the child nodes from quiz
 	while(rem.childNodes[0]){
 	    rem.removeChild(rem.childNodes[0]);
 		//console.log("removed");
