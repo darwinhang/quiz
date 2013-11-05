@@ -2,6 +2,7 @@
 ###########
 
 This is a quiz based on the javascriptissexy.com learn js in 6 weeks blog post.
+The quiz is hosted at http://winious.com/fun/quiz/index.html
 
 ## Todo ##
 * ~~Add Twitter Bootstrap~~
