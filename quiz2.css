@@ -1,0 +1,7 @@
+/*
+	stylesheet for updated quiz program
+
+*/
+form { border: 3px solid gray; border-radius: 0px 0px 15px 15px; padding: 15px; background-color:white;}
+h1 { text-align:center; border: 2px solid black; border-radius: 15px 15px 0px 0px; background-color:white;}
+body {background-color:#E8E8E8;}
