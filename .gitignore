@@ -1,3 +1,6 @@
 # auto-save files #
 ###################
 *~
+
+# Dependencies loaded from bower
+bower_components/**
